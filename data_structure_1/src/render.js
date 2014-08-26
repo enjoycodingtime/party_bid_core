@@ -12,3 +12,7 @@ var transform_biddings_to_view_model = function(current_activity,current_bid){
 		return num.length == 1;
 	});
 };
+var render_sign_ups = function(current_activity){
+	var activities = sign_up.get_storage();
+	return _.findWhere(activities,{'name':current_activity}).sign_ups;
+};

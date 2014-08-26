@@ -20,3 +20,10 @@ sign_up.get_storage = function(){
 sign_up.set_storage = function(activities){
     localStorage['activities'] = JSON.stringify(activities);
 };
+sign_up.prototype.check_repeat = function() {
+	var activities = sign_up.get_storage(),
+		self = this,
+		current_activity;
+	current_activity = _.findWhere(activities,{'name':localStorage.current_activity});
+	return _.findWhere(current_activity.sign_ups,{'phone':self.phone});
+};

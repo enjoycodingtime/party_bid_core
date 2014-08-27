@@ -8,8 +8,9 @@ function notify_sms_received(sms_json){
    		 }
 	}else if(sms_json.messages[0].message.search(/jj/i) == 0 && bid.check_phone(sms_json.messages[0].phone) && !bid.check_repeat(sms_json.messages[0].phone)){
 		var price = sms_json.messages[0].message.substr(2,8),
-			phone = sms_json.messages[0].phone;
-		var bidding = new bid(price,phone);
+			phone = sms_json.messages[0].phone,
+			name = bid.find_name(phone);
+		var bidding = new bid(price,phone,name);
 		if(localStorage.is_bidding == 'true'){
 			bidding.save_bid();
 		}

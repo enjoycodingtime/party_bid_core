@@ -15,6 +15,6 @@ activities[id] = activity;
 activity_ids.push(id);
 localStorage.activities = JSON.stringify(activities);
 localStorage.activity_ids = JSON.stringify(activity_ids);
-localStorage.current_activity = id;
+localStorage.current_activity_id= id;
 localStorage.activity_id_generator = parseInt(localStorage.activity_id_generator)+1;
 };

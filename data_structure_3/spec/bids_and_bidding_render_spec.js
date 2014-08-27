@@ -48,6 +48,7 @@ describe("Bids and Bidding Render", function() {
 
                     },
                     {
+                        name:'于',
                         phone:"15600000000",
                         price: "12"
                     },
@@ -79,10 +80,10 @@ describe("Bids and Bidding Render", function() {
     it("should show minimum not repeatable bidding", function(){
         var biddings = render_biddings("1","竞价2");
 
-        expect(biddings.length).toBe(1);
-        expect(biddings[0].name).toBe("于");
-        expect(biddings[0].phone).toBe("15600000000");
-        expect(biddings[0].price).toBe("12");
+        expect(biddings.length).toBe(3);
+        expect(biddings[1].name).toBe("于");
+        expect(biddings[1].phone).toBe("15600000000");
+        expect(biddings[1].price).toBe("12");
     });
 
 
